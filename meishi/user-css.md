@@ -1,4 +1,6 @@
 # 名刺入力サイト用ユーザーCSS
+初稿：2019.3.3　更新2019.3.7
+  
 某名刺入力業務の外部サイトのCSSをいじって遊ぶメモです。
 
 ## おやくそく
@@ -17,11 +19,32 @@ Stylus を使う場合、適用先は「次で始まるURL」に設定し、
 コピペでどうぞ。  
 色など、各自でいじってみてください。  
 
+### ■名刺の回転ボタンの位置を変更する
+ベストポジションは未だわからずなのですが、とりあえず名刺の右上に変更してみました。  
+
+```css
+/* ボタンの配置 */
+.btn-rotate {
+    position: relative;
+    float:right;
+}
+
+/* ボタンの色 */
+.btn-rotate md-icon {
+    color: crimson;
+}
+
+/* ボタンの背景 */
+.shadow {
+    display: none;
+}
+```
+
 ### ■完了ボタンを信号っぽくする
 最後の確認画面でエンターキーを連打しているみなさん用。  
 完了ボタンが赤→緑に変化してからエンターキーを押しましょう。
 
-```
+```css
 .md-button.md-accent.md-raised:not([disabled]) {
     background-color: #f00;
 }
@@ -32,7 +55,7 @@ Stylus を使う場合、適用先は「次で始まるURL」に設定し、
 名刺画像の白が逆に目に刺さるような感じがしたのでグレーにしてみました。  
 お気に召さない場合は `background-color` や `color` の色を変更してみてください。  
 
-```
+```css
 /* ルール：文字色 */
 .precautions {
     color: crimson;
@@ -99,7 +122,7 @@ SVGアイコン素材提供元
 　Created by @gaddafirusli ( http://twitter.com/gaddafirusli )  
 　MIT License ( https://opensource.org/licenses/MIT )  
 
-```
+```css
 /* 姓名 */
 div.typing.ng-scope.layout-column.flex-50 > div > :nth-child(3) label::before {
     content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23dc143c%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M20%2021v-2a4%204%200%200%200-4-4H8a4%204%200%200%200-4%204v2%22%3E%3C%2Fpath%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%227%22%20r%3D%224%22%3E%3C%2Fcircle%3E%3C%2Fsvg%3E");
@@ -192,7 +215,7 @@ MIT License ( https://opensource.org/licenses/MIT )
 グレーモードCSSの該当セレクタをコメントアウトするか、  
 グレーモードCSSよりも後ろに特定の入力欄のCSS記述するようにして下さい。  
 
-```
+```css
 #email,
 #email_id {
     background-color: hsl(300, 100%, 85%);
